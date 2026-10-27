@@ -30,6 +30,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import jinja2
 import markdown as md
@@ -39,6 +40,7 @@ from markupsafe import Markup
 ROOT = Path(__file__).parent
 OUT = ROOT / "_site"
 CROSSREF_CACHE = ROOT / ".cache" / "crossref.json"
+CHICAGO = ZoneInfo("America/Chicago")
 # Templates that are building blocks, not page layouts.
 NOT_LAYOUTS = {"base", "page", "redirect", "area", "news_post", "status"}
 warnings = []
@@ -239,7 +241,7 @@ def load_everything():
             check_photo(p, f"{ {'fellows': 'Fellows', 'staff': 'Administration'}[group]}: {p['name']}")
         data[group].sort(key=sort_key)
 
-    today = dt.date.today()
+    today = dt.datetime.now(CHICAGO).date()  # GitHub's servers run on UTC
     events = []
     for e in data["events"]:
         e["date"] = to_date(e.get("date"), f"Events: '{e.get('title')}'")
@@ -346,8 +348,7 @@ def main():
         write(old, env.get_template("redirect.html").render(target=new))
 
     # A private page at /site-status/ so editors can see problems without using GitHub.
-    from zoneinfo import ZoneInfo
-    built_at = dt.datetime.now(ZoneInfo("America/Chicago")).strftime("%B %-d, %Y at %-I:%M %p")
+    built_at = dt.datetime.now(CHICAGO).strftime("%B %-d, %Y at %-I:%M %p")
     write("/site-status/", env.get_template("status.html").render(
         site=site, data=data, today=today, warnings=warnings, built_at=built_at,
         page={"title": "Website status", "url": "/site-status/", "noindex": True}))

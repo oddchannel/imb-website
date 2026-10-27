@@ -99,6 +99,7 @@ Click **Research areas**, add an entry with the area's name and a one-line summa
 The website has a private status page: **your-website-address/site-status/**, for example `https://imb.uchicago.edu/site-status/`.
 
 It shows:
+
 - **When the site last updated.** If your change was saved after that time, wait a couple of minutes and refresh.
 - **Anything that needs fixing.** For example, an event with a date the site couldn't read, or a DOI that didn't work. Everything else still updates normally. Only the item with the problem is skipped.
 
