@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="prose">
+    <p>Last updated: <strong>{{ built_at }}</strong> (Chicago time).
+      If you saved a change after this time, wait a few minutes and refresh.</p>
+    {% if warnings %}
+      <h2>Things to fix ({{ warnings|length }})</h2>
+      <p>Everything else on the site was updated. These items were skipped or shown without a photo:</p>
+      <ul>{% for w in warnings %}<li>{{ w }}</li>{% endfor %}</ul>
+    {% else %}
+      <h2>All good ✓</h2>
+      <p>No problems were found in the latest update.</p>
+    {% endif %}
+  </div>
+{% endblock %}

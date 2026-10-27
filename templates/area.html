@@ -10,6 +10,7 @@
   </section>
 {% endblock %}
 {% block content %}
+  {% if page.area.content %}<div class="prose">{{ page.area.content }}</div>{% endif %}
   <div class="people-list">
     {% for p in page.area.members %}{{ faculty_card(p) }}{% endfor %}
   </div>

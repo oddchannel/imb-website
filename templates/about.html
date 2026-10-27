@@ -6,6 +6,7 @@
 
   {% set d = data.faculty|selectattr("name", "equalto", page.director)|first %}
   <section class="director" id="director">
+    {% if d %}
     <h2 class="section-title">Institute Director</h2>
     <div class="person">
       {{ photo(d) }}
@@ -15,9 +16,12 @@
         <p>{{ page.director_summary }}</p>
       </div>
     </div>
+    {% endif %}
+    {% if page.former_directors %}
     <h3>Former Directors of the Institute</h3>
     <ul class="plain">
       {% for f in page.former_directors %}<li><strong>{{ f.years }}</strong> · {{ f.name }}</li>{% endfor %}
     </ul>
+    {% endif %}
   </section>
 {% endblock %}

@@ -1,78 +1,417 @@
-# Configuration for Pages CMS (https://pagescms.org), an optional free editor that
-# gives non-technical staff simple web forms for the lists below.
-# Sign in at https://app.pagescms.org with the GitHub account that has access to this repository.
+# Dashboard configuration for Pages CMS (https://pagescms.org).
+# Editors sign in at https://app.pagescms.org and get simple forms for everything below.
+# Every field stored in these files is listed here, so saving from the dashboard never drops data.
+
 media:
   input: static/images
   output: /images
+  rename: safe
+
+settings:
+  commit:
+    identity: user   # record the editor's name on each change
+
+# "Publish now" button in the dashboard sidebar (re-runs .github/workflows/deploy.yml).
+actions:
+  - name: publish
+    label: Publish site now
+    workflow: deploy.yml
+    confirm:
+      title: Publish the website?
+      message: The site updates automatically after every save. Use this only if a change hasn't appeared after 5 minutes.
+      button: Publish
 
 content:
-  - name: faculty
-    label: Faculty
-    type: file
-    path: data/faculty.yml
-    list: true
+  # ------------------------------------------------------------------ News
+  - name: news
+    label: News
+    type: collection
+    path: content/news
+    format: yaml-frontmatter
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date, category, draft]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
     fields:
-      - { name: name, label: Name, type: string, required: true }
-      - { name: degree, label: Degree (e.g. PhD), type: string }
-      - { name: titles, label: Titles / appointments, type: string, list: true }
-      - { name: photo, label: Photo (square), type: image }
-      - { name: website, label: Lab website URL, type: string }
-      - { name: publications, label: Publications URL, type: string }
-      - name: areas
-        label: Research areas
+      - name: title
+        label: Headline
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: category
+        label: Category
         type: select
         options:
-          multiple: true
-          values: [cognition, perception, development, neuroendocrinology, computational-neuroscience]
-      - { name: bio, label: Biography, type: text }
-
-  - name: fellows
-    label: Fellows
-    type: file
-    path: data/fellows.yml
-    list: true
-    fields:
-      - { name: name, label: Name, type: string, required: true }
-      - name: role
-        label: Role
-        type: select
+          values: [Research, Award, Announcement, Event, In the media]
+      - name: image
+        label: Image
+        description: Optional. Shown on the home page and at the top of the post. Wide pictures work best.
+        type: image
         options:
-          values: [Graduate Student, Postdoctoral Scholar, Research Fellow]
-      - { name: lab, label: Lab (e.g. Kay Lab), type: string }
-      - { name: photo, label: Photo (square), type: image }
-      - { name: link, label: Profile link (optional), type: string }
+          path: static/images/news
+      - name: summary
+        label: Short summary
+        description: One or two sentences for the home page. Leave blank to use the start of the story.
+        type: text
+      - name: draft
+        label: Draft (hide from the website)
+        description: Tick this while you're still working on the post.
+        type: boolean
+      - name: body
+        label: Story
+        type: rich-text
+        options:
+          format: markdown
+          path: static/images/news
 
-  - name: staff
-    label: Administration
-    type: file
-    path: data/staff.yml
-    list: true
-    fields:
-      - { name: name, label: Name, type: string, required: true }
-      - { name: title, label: Job title, type: string }
-      - { name: photo, label: Photo (square), type: image }
-      - { name: email, label: Email (optional), type: string }
-      - { name: bio, label: Description, type: text }
-
+  # ------------------------------------------------------------------ Events
   - name: events
     label: Events
     type: file
     path: data/events.yml
+    format: yaml
     list: true
     fields:
-      - { name: title, label: Title, type: string, required: true }
-      - { name: date, label: Date, type: date, required: true }
-      - { name: time, label: Time (e.g. 3:30 PM), type: string }
-      - { name: location, label: Location, type: string }
-      - { name: description, label: Description, type: text }
-      - { name: link, label: Link (optional), type: string }
+      - name: title
+        label: Event name
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: time
+        label: Time
+        description: e.g. 3:30 PM, or 12:00 – 1:30 PM
+        type: string
+      - name: location
+        label: Location
+        description: e.g. BPSB Atrium
+        type: string
+      - name: description
+        label: Description
+        description: Optional.
+        type: text
+      - name: link
+        label: Link for more info or RSVP
+        description: Optional web address.
+        type: string
 
-  - name: highlights
-    label: Home page research highlights
+  # ------------------------------------------------------------------ Publications
+  - name: publications
+    label: Publications
     type: file
-    path: data/highlights.yml
+    path: data/publications.yml
+    format: yaml
     list: true
     fields:
-      - { name: title, label: Title, type: string, required: true }
-      - { name: image, label: Image, type: image }
-      - { name: text, label: Text (Markdown links allowed), type: text }
+      - name: doi
+        label: DOI
+        description: Paste the paper's DOI (e.g. 10.1177/09567976221090923). The title, authors, journal and year fill in automatically.
+        type: string
+      - name: members
+        label: Institute members on this paper
+        type: reference
+        options:
+          collection: faculty
+          multiple: true
+          value: "{primary}"
+          label: "{primary}"
+      - name: title
+        label: Title (only if there's no DOI, or to correct it)
+        type: string
+      - name: authors
+        label: Authors (only if there's no DOI)
+        type: string
+      - name: journal
+        label: Journal (only if there's no DOI)
+        type: string
+      - name: year
+        label: Year (only if there's no DOI)
+        type: number
+      - name: link
+        label: Link (optional; defaults to the DOI page)
+        type: string
+
+  # ------------------------------------------------------------------ People
+  - name: people
+    label: People
+    type: group
+    items:
+      - name: faculty
+        label: Faculty
+        type: collection
+        path: content/faculty
+        format: yaml-frontmatter
+        filename: "{primary}.md"
+        view:
+          fields: [name, degree]
+          primary: name
+          sort: [name]
+        fields:
+          - name: name
+            label: Full name
+            type: string
+            required: true
+          - name: degree
+            label: Degree
+            description: e.g. PhD
+            type: string
+          - name: titles
+            label: Titles / appointments
+            description: One per line, e.g. "Professor, Department of Psychology and The College".
+            type: string
+            list: true
+          - name: photo
+            label: Photo
+            description: A square headshot, at least 400 × 400 pixels.
+            type: image
+            options:
+              path: static/images/people
+          - name: website
+            label: Lab website
+            type: string
+          - name: publications_url
+            label: Full publication list link
+            description: e.g. their Google Scholar or PubMed page.
+            type: string
+          - name: areas
+            label: Research areas
+            type: reference
+            options:
+              collection: research_areas
+              multiple: true
+              value: "{primary}"
+              label: "{primary}"
+          - name: body
+            label: Biography
+            type: rich-text
+            options:
+              format: markdown
+              media: false
+
+      - name: fellows
+        label: Fellows (students & postdocs)
+        type: file
+        path: data/fellows.yml
+        format: yaml
+        list: true
+        fields:
+          - name: name
+            label: Full name
+            type: string
+            required: true
+          - name: role
+            label: Role
+            type: select
+            options:
+              values: [Graduate Student, Postdoctoral Scholar, Research Fellow]
+          - name: lab
+            label: Lab
+            description: e.g. Kay Lab
+            type: string
+          - name: photo
+            label: Photo
+            description: Optional. Square headshot; initials are shown if there's no photo.
+            type: image
+            options:
+              path: static/images/people
+          - name: link
+            label: Profile link
+            description: Optional, e.g. their Psychology department directory page.
+            type: string
+
+      - name: staff
+        label: Administration
+        type: file
+        path: data/staff.yml
+        format: yaml
+        list: true
+        fields:
+          - name: name
+            label: Full name
+            type: string
+            required: true
+          - name: title
+            label: Job title
+            type: string
+          - name: photo
+            label: Photo
+            type: image
+            options:
+              path: static/images/people
+          - name: email
+            label: Email
+            description: Optional.
+            type: string
+          - name: bio
+            label: Description
+            type: text
+
+  # ------------------------------------------------------------------ Research areas
+  - name: research_areas
+    label: Research areas
+    type: collection
+    path: content/research
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      fields: [name]
+      primary: name
+    fields:
+      - name: name
+        label: Area name
+        type: string
+        required: true
+      - name: summary
+        label: One-line summary
+        type: string
+      - name: body
+        label: Longer description (optional)
+        type: rich-text
+        options:
+          format: markdown
+
+  # ------------------------------------------------------------------ Page text
+  - name: pages
+    label: Page text
+    type: group
+    items:
+      - name: page_home
+        label: Home page
+        type: file
+        path: content/index.md
+        format: yaml-frontmatter
+        fields:
+          - { name: title, type: string, hidden: true }
+          - { name: hero_image, label: Banner image, type: image }
+          - { name: body, label: Welcome text, type: rich-text, options: { format: markdown } }
+      - name: page_about
+        label: About
+        type: file
+        path: content/about.md
+        format: yaml-frontmatter
+        fields:
+          - { name: title, label: Page title, type: string }
+          - { name: image, label: Image, type: image }
+          - { name: body, label: Page text, type: rich-text, options: { format: markdown } }
+          - name: director
+            label: Director
+            description: Must match the director's name exactly as it appears under Faculty.
+            type: string
+          - { name: director_summary, label: About the director, type: text }
+          - name: former_directors
+            label: Former directors
+            type: object
+            list: true
+            fields:
+              - { name: years, label: Years, type: string }
+              - { name: name, label: Name, type: string }
+      - name: page_people
+        label: Our Community
+        type: file
+        path: content/people.md
+        format: yaml-frontmatter
+        fields:
+          - { name: title, label: Page title, type: string }
+          - { name: image, label: Group photo, type: image }
+          - { name: body, label: Page text, type: rich-text, options: { format: markdown } }
+      - name: page_research
+        label: Our Research
+        type: file
+        path: content/research.md
+        format: yaml-frontmatter
+        fields:
+          - { name: title, label: Page title, type: string }
+          - { name: body, label: Page text, type: rich-text, options: { format: markdown } }
+      - name: page_contact
+        label: Contact
+        type: file
+        path: content/contact.md
+        format: yaml-frontmatter
+        fields:
+          - { name: title, label: Page title, type: string }
+          - { name: body, label: Page text, type: rich-text, options: { format: markdown } }
+      - name: page_faculty
+        label: Faculty page heading
+        type: file
+        path: content/faculty.md
+        format: yaml-frontmatter
+        fields:
+          - { name: title, label: Page title, type: string }
+          - { name: subtitle, label: Subtitle, type: string }
+          - { name: body, label: Intro text (optional), type: rich-text, options: { format: markdown } }
+      - name: page_fellows
+        label: Fellows page heading
+        type: file
+        path: content/fellows.md
+        format: yaml-frontmatter
+        fields:
+          - { name: title, label: Page title, type: string }
+          - { name: subtitle, label: Subtitle, type: string }
+          - { name: body, label: Intro text (optional), type: rich-text, options: { format: markdown } }
+      - name: page_administration
+        label: Administration page heading
+        type: file
+        path: content/administration.md
+        format: yaml-frontmatter
+        fields:
+          - { name: title, label: Page title, type: string }
+          - { name: subtitle, label: Subtitle, type: string }
+          - { name: body, label: Intro text (optional), type: rich-text, options: { format: markdown } }
+      - name: page_events
+        label: Events page heading
+        type: file
+        path: content/events.md
+        format: yaml-frontmatter
+        fields:
+          - { name: title, label: Page title, type: string }
+          - { name: subtitle, label: Subtitle, type: string }
+          - { name: body, label: Intro text (optional), type: rich-text, options: { format: markdown } }
+      - name: page_news
+        label: News page heading
+        type: file
+        path: content/news.md
+        format: yaml-frontmatter
+        fields:
+          - { name: title, label: Page title, type: string }
+          - { name: subtitle, label: Subtitle, type: string }
+          - { name: body, label: Intro text (optional), type: rich-text, options: { format: markdown } }
+      - name: page_publications
+        label: Publications page heading
+        type: file
+        path: content/publications.md
+        format: yaml-frontmatter
+        fields:
+          - { name: title, label: Page title, type: string }
+          - { name: subtitle, label: Subtitle, type: string }
+          - { name: body, label: Intro text (optional), type: rich-text, options: { format: markdown } }
+
+  # ------------------------------------------------------------------ Settings
+  - name: settings
+    label: Contact details
+    type: file
+    path: site.yml
+    format: yaml
+    fields:
+      - { name: title, label: Institute name, type: string }
+      - { name: short_title, label: Short name, type: string }
+      - { name: description, label: Description (for search engines), type: text }
+      - name: address
+        label: Address
+        description: One line per entry.
+        type: string
+        list: true
+      - { name: email, label: Contact email, type: string }
+      - { name: phone, label: Phone, type: string }

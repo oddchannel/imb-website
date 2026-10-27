@@ -1,107 +1,41 @@
 # Institute for Mind and Biology website
 
-This is the website for the Institute for Mind and Biology (IMB) at the University of Chicago.
+The website of the Institute for Mind and Biology (IMB) at the University of Chicago.
 
-All of the site's content is kept in simple text files. To change the site, you edit one of those files. When you save the change on GitHub, the site rebuilds and publishes itself, usually within a couple of minutes. You don't need to know any code.
-
----
-
-## Where everything lives
-
-| To change…                                        | Edit this file              |
-|---------------------------------------------------|-----------------------------|
-| Faculty members (bios, photos, links, research areas) | `data/faculty.yml`      |
-| Fellows (graduate students & postdocs)            | `data/fellows.yml`          |
-| Administration / staff                            | `data/staff.yml`            |
-| Events                                            | `data/events.yml`           |
-| "Latest Research" on the home page                | `data/highlights.yml`       |
-| Research area names and one-line summaries        | `data/research_areas.yml`   |
-| Page text (Home intro, About, Research, Contact…) | `content/*.md`              |
-| Menu, address, contact email, footer links        | `site.yml`                  |
-| Photos and images                                 | `static/images/`            |
-
-**Each person is listed once.** The research-area pages (Cognition, Perception, etc.) are built automatically from the `areas:` tags in `data/faculty.yml`. To add someone to an area, add the tag to their entry there.
-
-Events are **sorted automatically** and move from "Upcoming" to "Past" on their own, so you only ever add events, never move them.
+- **Editors:** see **[EDITING-GUIDE.md](EDITING-GUIDE.md)**. All everyday updates are made in a web dashboard (Pages CMS), with no coding.
+- **This file** is for whoever sets up hosting, or needs to change how the site works.
 
 ---
 
-## Two ways to edit
+## How it works
 
-### Option A: Fill in forms (easiest)
+All content lives in plain text files in this repository. When a change is saved, whether from the dashboard or on GitHub, a GitHub Action runs `build.py`. That script turns the files into a static website and publishes it with GitHub Pages. There's no database, no server, and nothing to patch for security.
 
-1. Go to **https://app.pagescms.org** and sign in with GitHub.
-2. Open this website's repository.
-3. Choose **Faculty**, **Fellows**, **Administration**, **Events**, or **Home page research highlights** from the menu, make your change in the form, and click **Save**.
+| Content                         | Where it lives                    | One file per… |
+|---------------------------------|-----------------------------------|---------------|
+| News posts                      | `content/news/`                   | post          |
+| Faculty (bio, photo, areas)     | `content/faculty/`                | person        |
+| Research areas                  | `content/research/`               | area          |
+| Page text (Home, About, …)      | `content/*.md`                    | page          |
+| Fellows, staff                  | `data/fellows.yml`, `data/staff.yml` | (one list) |
+| Events                          | `data/events.yml`                 | (one list)    |
+| Publications (DOIs)             | `data/publications.yml`           | (one list)    |
+| Contact details                 | `site.yml`                        |               |
+| Menu, footer links              | `menu.yml` (not in the dashboard) |               |
+| Redirects from old addresses    | `redirects.yml`                   |               |
+| Look and layout                 | `templates/`, `static/css/style.css` |            |
+| Dashboard forms                 | `.pages.yml`                      |               |
 
-Photos can be uploaded directly in the form.
+Things the build does automatically:
+- **Sorting.** People are sorted by last name, events by date, and news newest first.
+- **Events** move from "Upcoming" to "Past" on their own. The site rebuilds daily for this.
+- **Research-area pages and the "Our Research" menu** are generated from the faculty's area tags.
+- **Publications.** Editors enter only a DOI, and the title, authors, journal and year are fetched from Crossref. Results are cached in `.cache/crossref.json`, which is committed so builds don't depend on Crossref being up.
+- **Mistakes don't block publishing.** A missing photo, an unknown research area, or a bad date or DOI produces a warning. The affected item is skipped (or shown with initials) and everything else still publishes. Warnings appear on the private page **`/site-status/`** (not indexed by search engines) and as yellow notes in GitHub Actions. Only a genuinely broken file, such as invalid YAML from hand-editing, stops a build. In that case the live site stays as it was.
 
-> Note: saving through Pages CMS removes the explanatory `#` comments at the top of the data files. That's harmless; this guide covers the same information.
+## Previewing locally
 
-### Option B: Edit the file on GitHub
-
-1. On GitHub, open the file you want (see the table above).
-2. Click the ✏️ pencil icon (**Edit this file**).
-3. Make your change. Copy an existing entry and change the details; that's the easiest way to keep the format right.
-4. Click **Commit changes…**, write a short note (e.g. "Add spring cookout"), and confirm.
-
-To add a photo: open the `static/images/people/` folder, click **Add file → Upload files**, then put its path (e.g. `/images/people/smith.jpg`) in the person's `photo:` line.
-
----
-
-## Common tasks (Option B examples)
-
-### Add an event
-Add this anywhere in `data/events.yml`:
-
-```yaml
-- title: Cookie Hour
-  date: 2025-11-12
-  time: 3:30 PM
-  location: BPSB Atrium
-  description: Optional extra details.
-```
-
-The date **must** be written as year-month-day: `2025-11-12`.
-
-### Add a fellow
-In `data/fellows.yml`:
-
-```yaml
-- name: "Jane Doe"
-  role: Graduate Student
-  lab: Kay Lab
-  photo: /images/people/fellow-jane-doe.jpg
-  link: https://psychology.uchicago.edu/people/...
-```
-
-If there's no photo, leave `photo:` empty and the site shows the person's initials instead.
-
-### Remove someone
-Delete their whole entry, from their `- name:` line down to the line just before the next `- name:`.
-
-### Add a faculty member
-Copy an existing faculty entry in `data/faculty.yml` and change it. Valid research `areas` are:
-`cognition`, `perception`, `development`, `neuroendocrinology`, `computational-neuroscience`.
-
-### Change page text
-Files in `content/` are written in Markdown. Plain paragraphs are just text. A blank line starts a new paragraph, `## Heading` makes a heading, and `[link text](https://...)` makes a link. Leave the block between the two `---` lines at the top alone unless you know what it does.
-
----
-
-## Formatting rules (YAML files)
-
-- **Indent with spaces, never tabs.** Keep the same indentation as the entries around you.
-- If a value contains a colon followed by a space (`: `), or starts with a special character, wrap it in double quotes: `title: "Note: rescheduled"`.
-- Long text such as a bio goes after `bio: |` on the following lines, indented 4 spaces. Leave a blank line between paragraphs.
-
-**If you make a mistake, nothing breaks.** The site checks your edit before publishing. If something is wrong (a typo in a research area, a photo file that doesn't exist, a badly written date), the update is not published and the live site stays as it was. To see the error message, open the repository's **Actions** tab and click the failed run (marked with a red ✗). The message names the file and the person or event to fix.
-
----
-
-## Previewing on your own computer (optional)
-
-You'll need Python 3. Then run:
+You'll need Python 3. Run these commands from inside this folder (e.g. `cd ~/data/imb-website` first):
 
 ```bash
 pip install -r requirements.txt
@@ -111,18 +45,42 @@ pip install -r requirements.txt
 python build.py --serve
 ```
 
-Open http://localhost:8000 to see the site. Run the command again after making changes.
+Open http://localhost:8000.
+
+To make a copy you can zip and email for review, which opens by double-clicking `index.html`:
+
+```bash
+python build.py --offline --out ../IMB-website-demo
+```
 
 ---
 
-## One-time setup (for whoever sets up hosting)
+## One-time setup
 
-1. Create a GitHub repository (ideally under a UChicago or IMB GitHub organization so it isn't tied to one person) and upload this folder.
-2. In the repository: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-3. The site will publish to `https://<org>.github.io/<repo>/`. The workflow in `.github/workflows/deploy.yml` handles everything, including a daily rebuild so past events are moved automatically.
-4. **Custom domain:** to serve it at `imb.uchicago.edu`, enter the domain under **Settings → Pages → Custom domain**, and ask UChicago IT Services to point the `imb.uchicago.edu` DNS record at GitHub Pages (a CNAME to `<org>.github.io`). Old addresses from the previous WordPress site (e.g. `/staff-profile-2/`, `/cognition/`) automatically redirect to the new pages.
-5. Give editors access: add them as collaborators on the repository (they need a free GitHub account).
+### 1. Hosting on GitHub Pages
+1. Create a **public** GitHub repository, ideally under an IMB or UChicago organization so it isn't tied to one person, and push this folder to it.
+2. In the repository, go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
+3. Go to **Actions → Build and publish site → Run workflow**. The site appears at `https://<org>.github.io/<repo>/`.
 
-### How it works (for the technically curious)
+### 2. The editing dashboard (Pages CMS)
+1. Go to **https://app.pagescms.org** and sign in with GitHub, as a user with admin access to the repository.
+2. When prompted, install the **Pages CMS GitHub App** and give it access to this repository.
+3. Open the repository in Pages CMS. The menus come from `.pages.yml`. Check that each section opens and saves correctly; this configuration hasn't been tested against a live repository yet.
+4. **Invite Anissha (and any other editors) as collaborators by email** in the repository's settings in Pages CMS. Collaborators **don't need a GitHub account**; they can edit content and photos but can't change the configuration.
+5. Fill in the support contact at the bottom of `EDITING-GUIDE.md`, and send it to them.
 
-`build.py` is a short Python script that reads the YAML/Markdown files, fills in the HTML templates in `templates/`, and writes a plain static website into `_site/`. Styling is in `static/css/style.css`. There's no database, no plugins, and nothing to patch or update for security.
+### 3. Custom domain (imb.uchicago.edu)
+1. In GitHub, go to **Settings → Pages → Custom domain**, enter `imb.uchicago.edu`, and save.
+2. Ask UChicago IT Services to change the `imb.uchicago.edu` DNS record to a CNAME pointing to `<org>.github.io`.
+3. Once it works, tick **Enforce HTTPS**.
+
+Old WordPress addresses, such as `/staff-profile-2/` and `/cognition/`, redirect to the new pages via `redirects.yml`.
+
+---
+
+## Making technical changes
+
+- **Menu:** edit `menu.yml`. `children_from: research_areas` lists every research area automatically.
+- **New page:** add `content/<name>.md`. It's published at `/<name>/` using `templates/page.html`, or `templates/<name>.html` if one exists. Add it to `.pages.yml` so editors can change its text, and to `menu.yml` if it belongs in the menu.
+- **New field for editors:** add it to the content file *and* to `.pages.yml`. The dashboard should only ever save fields it knows about, so keep the two in sync.
+- **News categories, fellow roles:** these drop-down options are set in `.pages.yml`.

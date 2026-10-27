@@ -1,0 +1,37 @@
+# Main navigation menu and footer links (technical settings, not in the dashboard).
+# "children" become a drop-down. "children_from: research_areas" lists every
+# research area automatically, so new areas appear in the menu on their own.
+nav:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: Our Community
+    url: /people/
+    children:
+      - title: Faculty
+        url: /faculty/
+      - title: Fellows
+        url: /fellows/
+      - title: Administration
+        url: /administration/
+  - title: Our Research
+    url: /research/
+    children_from: research_areas
+    children:
+      - title: Publications
+        url: /publications/
+  - title: News
+    url: /news/
+  - title: Events
+    url: /events/
+  - title: Contact
+    url: /contact/
+
+footer_links:
+  - title: Division of the Social Sciences
+    url: https://socialsciences.uchicago.edu/
+  - title: Department of Psychology
+    url: https://psychology.uchicago.edu/
+  - title: The University of Chicago
+    url: https://www.uchicago.edu/

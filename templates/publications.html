@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+  {{ page.content }}
+  {% if data.publications %}
+  <p class="filter">
+    <label for="member-filter">Show papers by</label>
+    <select id="member-filter">
+      <option value="">All Institute members</option>
+      {% for f in data.faculty if f.pub_count %}<option value="{{ f.slug }}">{{ f.name }}</option>{% endfor %}
+    </select>
+  </p>
+  {% for year, items in data.publications|groupby("year")|reverse %}
+  <section class="pub-year">
+    <h2 class="section-title">{{ year or "Other" }}</h2>
+    <ol class="pubs">
+      {% for p in items %}
+      <li class="pub" data-members="{{ p.members|map(attribute='slug')|join(' ') }}">
+        <a class="pub-title" href="{{ p.link }}">{{ p.title }}</a>
+        <span class="pub-authors">{{ p.authors }}</span>
+        <span class="pub-journal">{% if p.journal %}<em>{{ p.journal }}</em>{% endif %}{% if p.year %} ({{ p.year }}){% endif %}</span>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endfor %}
+  <script>
+    (function () {
+      var select = document.getElementById("member-filter");
+      function apply() {
+        var who = select.value;
+        document.querySelectorAll(".pub").forEach(function (li) {
+          li.hidden = who && li.dataset.members.split(" ").indexOf(who) < 0;
+        });
+        document.querySelectorAll(".pub-year").forEach(function (sec) {
+          sec.hidden = !sec.querySelector(".pub:not([hidden])");
+        });
+      }
+      select.value = new URLSearchParams(location.search).get("member") || "";
+      select.addEventListener("change", apply);
+      apply();
+    })();
+  </script>
+  {% else %}
+    <p class="muted">No publications have been added yet.</p>
+  {% endif %}
+{% endblock %}

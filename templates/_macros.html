@@ -7,15 +7,16 @@
 {% endmacro %}
 
 {% macro faculty_card(p) %}
-  <article class="person" id="{{ p.name|lower|replace(' ', '-')|replace('.', '') }}">
+  <article class="person" id="{{ p.slug }}">
     {{ photo(p) }}
     <div class="person-body">
       <h2>{{ p.name }}{% if p.degree %}, {{ p.degree }}{% endif %}</h2>
       {% for t in p.titles or [] %}<p class="person-title">{{ t }}</p>{% endfor %}
-      <div class="bio">{{ p.bio|markdown }}</div>
+      <div class="bio">{{ p.bio }}</div>
       <p class="buttons">
         {% if p.website %}<a class="button" href="{{ p.website }}">Lab website</a>{% endif %}
-        {% if p.publications %}<a class="button outline" href="{{ p.publications }}">Publications</a>{% endif %}
+        {% if p.publications_url %}<a class="button outline" href="{{ p.publications_url }}">All publications</a>{% endif %}
+        {% if p.pub_count %}<a class="button outline" href="/publications/?member={{ p.slug }}">Featured papers ({{ p.pub_count }})</a>{% endif %}
       </p>
     </div>
   </article>
@@ -30,4 +31,15 @@
       {% if e.description %}<div class="event-desc">{{ e.description|markdown }}</div>{% endif %}
     </div>
   </li>
+{% endmacro %}
+
+{% macro news_card(n) %}
+  <article class="highlight">
+    {% if n.image %}<a href="{{ n.url }}" tabindex="-1"><img src="{{ n.image }}" alt="" loading="lazy"></a>{% endif %}
+    <div class="highlight-body">
+      <p class="news-meta">{% if n.category %}<span class="tag">{{ n.category }}</span> {% endif %}{{ n.date|shortdate }}</p>
+      <h3><a href="{{ n.url }}">{{ n.title }}</a></h3>
+      <p>{{ n.summary }}</p>
+    </div>
+  </article>
 {% endmacro %}

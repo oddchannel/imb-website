@@ -9,7 +9,12 @@ on:
   pull_request:
   schedule:
     - cron: "0 9 * * *"   # daily, 09:00 UTC
-  workflow_dispatch:
+  workflow_dispatch:      # "Run workflow" on GitHub, or "Publish site now" in Pages CMS
+    inputs:
+      payload:
+        description: Sent by Pages CMS (not needed when running by hand)
+        required: false
+        type: string
 
 permissions:
   contents: read

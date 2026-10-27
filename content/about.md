@@ -1,10 +1,6 @@
 ---
 title: About the Institute
-layout: about
-url: /about/
 image: /images/site/about.jpg
-aliases: [/staff-profile-2/, /staff-profile-2-3-4/, /staff-profile-2-3-3/, /staff-profile-2-3-2/, /staff-profile-2-3-2-2/]
-# The director is pulled from faculty.yml by name, so their photo and bio stay in one place.
 director: Edward K. Vogel
 director_summary: >-
   Professor Vogel focuses on attention & memory capacity, individual differences in cognition,

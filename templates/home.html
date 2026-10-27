@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "_macros.html" import event_item %}
+{% from "_macros.html" import event_item, news_card %}
 {% block hero %}
   <section class="hero" style="background-image: url('{{ page.hero_image }}')">
     <div class="hero-overlay">
@@ -12,21 +12,15 @@
   </section>
 {% endblock %}
 {% block content %}
+  {% if data.news %}
   <section>
-    <h2 class="section-title">Latest Research</h2>
+    <h2 class="section-title">Latest News</h2>
     <div class="highlights">
-    {% for h in data.highlights %}
-      <article class="highlight">
-        {% if h.image %}<img src="{{ h.image }}" alt="" loading="lazy">{% endif %}
-        <div class="highlight-body">
-          <h3>{{ h.title }}</h3>
-          {{ h.text|markdown }}
-        </div>
-      </article>
-    {% endfor %}
+      {% for n in data.news[:4] %}{{ news_card(n) }}{% endfor %}
     </div>
-    <p><a class="more" href="/research/">More about our research →</a></p>
+    <p><a class="more" href="/news/">All news →</a></p>
   </section>
+  {% endif %}
 
   {% if data.upcoming_events %}
   <section>

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% from "_macros.html" import news_card %}
+{% block content %}
+  {{ page.content }}
+  {% if data.news %}
+    <div class="highlights">{% for n in data.news %}{{ news_card(n) }}{% endfor %}</div>
+  {% else %}
+    <p class="muted">No news yet. Please check back soon.</p>
+  {% endif %}
+{% endblock %}
