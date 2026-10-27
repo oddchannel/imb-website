@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% from "_macros.html" import faculty_card %}
+{% block hero %}
+  <section class="page-title">
+    <div class="wrap">
+      <p class="eyebrow"><a href="/research/">Our Research</a></p>
+      <h1>{{ page.title }}</h1>
+      {% if page.area.summary %}<p class="subtitle">{{ page.area.summary }}</p>{% endif %}
+    </div>
+  </section>
+{% endblock %}
+{% block content %}
+  <div class="people-list">
+    {% for p in page.area.members %}{{ faculty_card(p) }}{% endfor %}
+  </div>
+{% endblock %}

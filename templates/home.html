@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% from "_macros.html" import event_item %}
+{% block hero %}
+  <section class="hero" style="background-image: url('{{ page.hero_image }}')">
+    <div class="hero-overlay">
+      <div class="wrap">
+        <h1>{{ site.title }}</h1>
+        <div class="hero-text">{{ page.content }}</div>
+        <p><a class="button light" href="/research/">Our research</a> <a class="button light outline" href="/people/">Our community</a></p>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+{% block content %}
+  <section>
+    <h2 class="section-title">Latest Research</h2>
+    <div class="highlights">
+    {% for h in data.highlights %}
+      <article class="highlight">
+        {% if h.image %}<img src="{{ h.image }}" alt="" loading="lazy">{% endif %}
+        <div class="highlight-body">
+          <h3>{{ h.title }}</h3>
+          {{ h.text|markdown }}
+        </div>
+      </article>
+    {% endfor %}
+    </div>
+    <p><a class="more" href="/research/">More about our research →</a></p>
+  </section>
+
+  {% if data.upcoming_events %}
+  <section>
+    <h2 class="section-title">Upcoming Events</h2>
+    <ul class="events">
+      {% for e in data.upcoming_events[:3] %}{{ event_item(e) }}{% endfor %}
+    </ul>
+    <p><a class="more" href="/events/">All events →</a></p>
+  </section>
+  {% endif %}
+{% endblock %}

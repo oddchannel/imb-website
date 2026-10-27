@@ -1,0 +1,154 @@
+# Faculty members of the Institute.
+# Each person appears ONCE here. List the research areas they belong to under "areas";
+# the research-area pages are built automatically from these tags.
+# Valid areas: cognition, perception, development, neuroendocrinology, computational-neuroscience
+# Photos go in static/images/people/ (square, at least 400x400 px).
+
+- name: "Edward Awh"
+  degree: PhD
+  titles:
+    - "Professor, Department of Psychology and The College"
+  photo: /images/people/awh.jpg
+  website: https://awhvogellab.com/
+  publications: "https://scholar.google.com/citations?user=fiVbdD0AAAAJ&hl=en&oi=ao"
+  areas: [perception, cognition, computational-neuroscience]
+  bio: |
+    Professor Awh received a BA in Psychology from Northwestern University and MA and Ph.D. in Psychology from University of Michigan. He completed his dissertation research in the laboratories of John Jonides and Edward E. Smith at Michigan. Professor Awh did his postdoctoral research at the Center for Human Information Processing at University of California, San Diego.
+
+    Prior to UChicago, Professor Awh held a faculty appointment in the Department of Psychology and the Institute for Neuroscience at University of Oregon.
+
+- name: "Wilma Bainbridge"
+  degree: PhD
+  titles:
+    - "Associate Professor, Department of Psychology and The College"
+  photo: /images/people/bainbridge.jpg
+  website: https://brainbridgelab.uchicago.edu/
+  publications: "https://scholar.google.com/citations?user=cHZ2U6UAAAAJ&hl=en&oi=ao"
+  areas: [perception, cognition, computational-neuroscience]
+  bio: |
+    Professor Bainbridge received her B.A. in Cognitive Science from Yale University, studying both visual neuroscience and human-robot interaction. After a year-long research internship in robotics at the University of Tokyo, she completed her Ph.D in Brain & Cognitive Sciences at the Massachusetts Institute of Technology, studying vision and memory. She then completed postdoctoral training in the Laboratory of Brain and Cognition at the National Institute of Mental Health before coming to the University of Chicago. Her research focuses on the cognitive neuroscience of perception and memory, looking at how certain items are intrinsically more memorable than others, and how the brain is sensitive to this information. She also explores the visual content of memories, using drawings and functional MRI to decode memory content.
+
+- name: "Akram Bakkour"
+  degree: PhD
+  titles:
+    - "Assistant Professor, Department of Psychology and The College"
+  photo: /images/people/bakkour.jpg
+  website: https://bakkourlab.uchicago.edu/
+  publications: "https://scholar.google.com/citations?user=FSEs0nAAAAAJ"
+  areas: [cognition, computational-neuroscience]
+  bio: |
+    Professor Bakkour received a BS in Neuroscience from Brown University then conducted three years of translational research at Massachusetts General Hospital in Boston working with Dr. Bradford Dickerson developing imaging biomarkers of neurodegenerative disease. He completed his PhD in Neuroscience at The University of Texas at Austin in the lab of Dr. Russell Poldrack studying value-based decision making and behavioral change. He then completed postdoctoral training at Columbia University in New York working with Dr. Daphna Shohamy and Dr. Michael Shadlen before moving to Chicago. Professor Bakkour’s research focuses on the cognitive and neural mechanisms by which relational memory contributes to decision making using a combination of functional brain imaging, eyetracking, computational modeling, machine learning, and neuropsychological studies with patients that have known cognitive deficits.
+
+- name: "Leslie Kay"
+  degree: PhD
+  titles:
+    - "Professor, Department of Psychology and The College"
+  photo: /images/people/kay.jpg
+  website: https://kaylab.uchicago.edu/
+  publications: "https://scholar.google.com/citations?user=uPf7_a4AAAAJ&hl=en&oi=ao"
+  areas: [perception, cognition, computational-neuroscience]
+  bio: |
+    Professor Kay received a BA in Liberal Arts from St. John’s College in Santa Fe, New Mexico and then worked for the original GenBank project at Los Alamos National Laboratory from 1982-85. She worked as a programmer/analyst in business applications for a number of years in the mid- to late 80s, and then returned to graduate school at UC Berkeley. She completed her dissertation research in the laboratory of Walter J. Freeman, and received a Ph.D. in Biophysics in 1995. Kay completed postdoctoral research in the laboratory of Gilles Laurent at the California Institute of Technology, where she studied olfactory bulb mitral cell responses to changes in odor context.
+
+- name: "Yuan Chang (YC) Leong"
+  degree: PhD
+  titles:
+    - "Assistant Professor, Department of Psychology and The College"
+  photo: /images/people/leong.jpg
+  website: https://mcnlab.uchicago.edu/people/
+  publications: "https://scholar.google.com/citations?hl=en&user=An2VxEwAAAAJ&view_op=list_works&sortby=pubdate"
+  areas: [perception, cognition, computational-neuroscience]
+  bio: |
+    Professor Leong received his PhD in Psychology from Stanford University working with Jamil Zaki. He completed his postdoctoral training at the Helen Wills Neuroscience Institute at the University of California, Berkeley in the laboratory of Mark D'Esposito. Research in his lab aims to uncover the neural and computational mechanisms underlying how goals, motivations and emotions affect human perception, memory, decision-making and social interactions. His work uses a combination of convergent tools, including functional brain imaging (e.g., fMRI, fNIRS), behavioral experiments, naturalistic task paradigms, computational cognitive models, and machine learning methods.
+
+- name: "Sarah E. London"
+  degree: PhD
+  titles:
+    - "Associate Professor, Department of Psychology and The College"
+  photo: /images/people/london.jpg
+  website: https://voices.uchicago.edu/london/
+  publications: "https://scholar.google.com/citations?user=vxMh7JcAAAAJ&hl=en&oi=ao"
+  areas: [perception, cognition, development, neuroendocrinology]
+  bio: |
+    Professor London received her BA in Biology and Psychology from Middlebury College and her Ph.D. in Neuroscience from the University of California, Los Angeles. She completed a Postdoctoral Fellowship and was also a Research Scientist at the University of Illinois, Urbana-Champaign.
+
+- name: "Dario Maestripieri"
+  degree: PhD
+  titles:
+    - "Professor, Department of Comparative Human Development and The College"
+  photo: /images/people/maestripieri.jpg
+  website: https://primate.uchicago.edu/index.html
+  publications: "https://scholar.google.com/citations?user=Or_dEW0AAAAJ&hl=en&oi=ao"
+  areas: [perception, neuroendocrinology]
+  bio: |
+    Professor Maestripieri obtained a laurea in Biology in 1987 and a doctorate in Psychobiology in 1992 from the Università di Roma La Sapienza, in Italy. After spending one year as a Visiting Researcher at the Sub-department of Animal Behaviour of the University of Cambridge in the U.K., he moved to Emory University, where he worked at the Yerkes National Primate Research Center from 1992 to 1999.
+
+- name: "Martha K. McClintock"
+  degree: PhD
+  titles:
+    - "David Lee Shillinglaw Distinguished Service Professor Emerita, Departments of Psychology and Comparative Human Development"
+  photo: /images/people/mcclintock.jpg
+  website: 
+  publications: "https://scholar.google.com/citations?user=szVQb74AAAAJ&hl=en&oi=ao"
+  areas: [perception, neuroendocrinology]
+  bio: |
+    Martha McClintock retired as the David Lee Shillinglaw Distinguished Service Professor in Psychology in 2017. She held joint appointments in the Departments of Comparative Human Development and Psychology and The College. She was a member of the Committees on Neurobiology and Evolutionary Biology. Professor Emerita McClintock is the founding Director of the Institute and held that position until 2008. She has been at the University since 1976.
+
+- name: "Brian J. Prendergast"
+  degree: PhD
+  titles:
+    - "Professor, Department of Psychology and The College"
+  photo: /images/people/prendergast.jpg
+  website: 
+  publications: "https://scholar.google.com/citations?user=Fs0eJ54AAAAJ&hl=en&oi=ao"
+  areas: [perception, neuroendocrinology]
+  bio: |
+    Professor Prendergast received his BA in Psychology from Williams College and Ph.D. in Psychology from University California, Berkeley, where he was awarded a postdoctoral fellowship. He also received postdoctoral fellowships from Johns Hopkins University and The Ohio State University.
+
+- name: "Monica Rosenberg"
+  degree: PhD
+  titles:
+    - "Associate Professor, Department of Psychology and The College"
+  photo: /images/people/rosenberg.jpg
+  website: https://cablab.uchicago.edu/
+  publications: "https://scholar.google.com/citations?user=GHY5T6wAAAAJ&hl"
+  areas: [perception, cognition, computational-neuroscience, development]
+  bio: |
+    Professor Rosenberg's lab uses neuroimaging and behavioral experiments and machine learning methods to investigate how attention differs across people, changes on time scales from moments to years, and interacts with other mental processes such as learning and memory. Dr. Rosenberg received her Ph.D. and postdoctoral training in the Department of Psychology at Yale University. She was an undergraduate at Brown University, where she studied cognitive neuroscience.
+
+- name: "Steven K. Shevell"
+  degree: PhD
+  titles:
+    - "Eliakim Hastings Moore Distinguished Service Professor"
+    - "Departments of Psychology and Ophthalmology & Visual Science"
+  photo: /images/people/shevell.jpg
+  website: https://www.shevellvisualsciencelab.com/
+  publications: "https://pubmed.ncbi.nlm.nih.gov/?term=shevell%2C+SK"
+  areas: [perception, cognition]
+  bio: |
+    Professor Shevell received an A.B. in Psychology and M.S. in Engineering from Stanford University; an M.A. in statistics from University of Michigan; and a Ph.D. in Psychology (mathematical psychology area) from the University of Michigan. He is the founding associate editor of the Journal of Vision, former senior editor of Vision Research, past- president of the Vision Sciences Society and a Fellow of the Association for Psychological Science (APS), the Association for Research in Vision and Ophthalmology (ARVO), the Optical Society of America, and the American Association for the Advancement of Science (AAAS).
+
+- name: "Edward K. Vogel"
+  degree: PhD
+  titles:
+    - "Director, Institute for Mind and Biology"
+    - "Professor, Department of Psychology and The College"
+  photo: /images/people/vogel.jpg
+  website: https://awhvogellab.com/
+  publications: "https://scholar.google.com/citations?user=K24Hke0AAAAJ&hl=en&oi=ao"
+  areas: [perception, cognition, computational-neuroscience]
+  bio: |
+    Professor Vogel received a BA in Psychology from University of Puget Sound and a Ph.D. in Psychology from University of Iowa. He completed his dissertation in the lab of Steven J. Luck. Professor Vogel held a postdoctoral research position at the Institute for Neural Computation at University of California, San Diego. Prior to UChicago, Professor Vogel held faculty appointments in the Department of Psychology and the Institute for Neuroscience at University of Oregon.
+
+- name: "Jai Y. Yu"
+  degree: PhD
+  titles:
+    - "Assistant Professor, Department of Psychology and The College"
+  photo: /images/people/yu.jpg
+  website: https://voices.uchicago.edu/jaiyu/
+  publications: "https://scholar.google.com/citations?user=Y4h2R4sAAAAJ&hl=en&oi=ao"
+  areas: [cognition, computational-neuroscience]
+  bio: |
+    Professor Yu received a BBiomedSc and a BSc (Hons) from the University of Melbourne, Australia. He completed graduate research with Barry Dickson at the Institute of Molecular Pathology in Vienna, Austria. Professor Yu held a postdoctoral research position in the lab of Loren Frank at the University of California, San Francisco.
+
+    Professor Yu's research focuses on understanding the contribution of coordinated brain activity to learning and memory. His lab combines neural recording and manipulation techniques with computational methods to investigate the relationship between neural activity and behavior.

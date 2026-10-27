@@ -1,0 +1,59 @@
+# Site-wide settings. Edit these and the whole site updates.
+
+title: Institute for Mind and Biology
+short_title: IMB
+description: >-
+  The Institute for Mind and Biology at the University of Chicago enables research
+  answering fundamental questions about the mind and its dynamic interaction with the
+  biological systems of the body.
+
+# Contact details (shown in the footer and on the Contact page).
+address:
+  - Institute for Mind and Biology
+  - Biopsychological Sciences Building (BPSB)
+  - 940 East 57th Street
+  - Chicago, Illinois 60637
+email: ""        # TODO: add a general contact email, e.g. imb@uchicago.edu
+phone: ""        # optional
+
+# Main navigation menu. "children" become a drop-down.
+nav:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: Our Community
+    url: /people/
+    children:
+      - title: Faculty
+        url: /faculty/
+      - title: Fellows
+        url: /fellows/
+      - title: Administration
+        url: /administration/
+  - title: Our Research
+    url: /research/
+    children:
+      - title: Cognition
+        url: /research/cognition/
+      - title: Computational Neuroscience
+        url: /research/computational-neuroscience/
+      - title: Development
+        url: /research/development/
+      - title: Neuroendocrinology
+        url: /research/neuroendocrinology/
+      - title: Perception
+        url: /research/perception/
+  - title: Events
+    url: /events/
+  - title: Contact
+    url: /contact/
+
+# Links shown in the footer.
+footer_links:
+  - title: Division of the Social Sciences
+    url: https://socialsciences.uchicago.edu/
+  - title: Department of Psychology
+    url: https://psychology.uchicago.edu/
+  - title: The University of Chicago
+    url: https://www.uchicago.edu/

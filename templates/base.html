@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.url != "/" %}{{ page.title }} | {% endif %}{{ site.title }} | The University of Chicago</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="/"><img src="/images/site/logo-white.svg" alt="The University of Chicago Division of the Social Sciences, {{ site.title }}"></a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle menu">
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true"><span></span></label>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+        {% for item in site.nav %}
+          {% set active = page.url == item.url or (item.url != "/" and page.url.startswith(item.url)) or (item.children and page.url in item.children|map(attribute="url")) %}
+          <li class="{% if item.children %}has-children{% endif %}{% if active %} active{% endif %}">
+            <a href="{{ item.url }}">{{ item.title }}</a>
+            {% if item.children %}
+            <ul>
+              {% for child in item.children %}
+              <li{% if page.url == child.url %} class="active"{% endif %}><a href="{{ child.url }}">{{ child.title }}</a></li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+  {% block hero %}
+    <section class="page-title">
+      <div class="wrap">
+        <h1>{{ page.title }}</h1>
+        {% if page.subtitle %}<p class="subtitle">{{ page.subtitle }}</p>{% endif %}
+      </div>
+    </section>
+  {% endblock %}
+    <div class="wrap content">
+    {% block content %}{{ page.content }}{% endblock %}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <img class="footer-logo" src="/images/site/logo-white.svg" alt="{{ site.title }}">
+        <address>{% for line in site.address %}{{ line }}<br>{% endfor %}
+          {% if site.email %}<a href="mailto:{{ site.email }}">{{ site.email }}</a><br>{% endif %}
+          {% if site.phone %}{{ site.phone }}{% endif %}
+        </address>
+      </div>
+      <ul class="footer-links">
+        {% for link in site.footer_links %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% endfor %}
+      </ul>
+    </div>
+    <div class="wrap copyright">© {{ today.year }} The University of Chicago</div>
+  </footer>
+</body>
+</html>

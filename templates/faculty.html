@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% from "_macros.html" import faculty_card %}
+{% block content %}
+  {{ page.content }}
+  <div class="people-list">
+    {% for p in data.faculty %}{{ faculty_card(p) }}{% endfor %}
+  </div>
+{% endblock %}

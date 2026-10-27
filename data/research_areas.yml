@@ -1,0 +1,27 @@
+# Research areas. The "id" must match the tags used under "areas" in faculty.yml.
+# Each area gets its own page at /research/<id>/ listing the tagged faculty automatically.
+
+- id: cognition
+  aliases: [/cognition/]  # old web address, redirects here
+  name: Cognition
+  summary: We study memory, learning, attention and decision-making in different model organisms.
+
+- id: perception
+  aliases: [/perception/]  # old web address, redirects here
+  name: Perception
+  summary: ""  # TODO: the old site had no one-line summary for this area; add one here
+
+- id: development
+  aliases: [/development/]  # old web address, redirects here
+  name: Development
+  summary: We study cellular, physiological and behavioral changes across development.
+
+- id: neuroendocrinology
+  aliases: [/neuroendocrinology/]  # old web address, redirects here
+  name: Neuroendocrinology
+  summary: We study how the neuroendocrine system affects behavior and physiology.
+
+- id: computational-neuroscience
+  aliases: [/comp_neuro/]  # old web address, redirects here
+  name: Computational Neuroscience
+  summary: We apply computational techniques to gain insight on neural mechanisms supporting cognition.

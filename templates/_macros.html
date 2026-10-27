@@ -1,0 +1,33 @@
+{% macro photo(person, cls="photo") %}
+  {% if person.photo %}
+    <img class="{{ cls }}" src="{{ person.photo }}" alt="Photo of {{ person.name }}" loading="lazy">
+  {% else %}
+    <div class="{{ cls }} placeholder" aria-hidden="true">{{ person.name[0] }}{{ person.name.split()[-1][0] }}</div>
+  {% endif %}
+{% endmacro %}
+
+{% macro faculty_card(p) %}
+  <article class="person" id="{{ p.name|lower|replace(' ', '-')|replace('.', '') }}">
+    {{ photo(p) }}
+    <div class="person-body">
+      <h2>{{ p.name }}{% if p.degree %}, {{ p.degree }}{% endif %}</h2>
+      {% for t in p.titles or [] %}<p class="person-title">{{ t }}</p>{% endfor %}
+      <div class="bio">{{ p.bio|markdown }}</div>
+      <p class="buttons">
+        {% if p.website %}<a class="button" href="{{ p.website }}">Lab website</a>{% endif %}
+        {% if p.publications %}<a class="button outline" href="{{ p.publications }}">Publications</a>{% endif %}
+      </p>
+    </div>
+  </article>
+{% endmacro %}
+
+{% macro event_item(e) %}
+  <li class="event">
+    <div class="event-date"><span class="month">{{ e.date.strftime("%b") }}</span><span class="day">{{ e.date.day }}</span><span class="year">{{ e.date.year }}</span></div>
+    <div>
+      <h3>{% if e.link %}<a href="{{ e.link }}">{{ e.title }}</a>{% else %}{{ e.title }}{% endif %}</h3>
+      <p class="event-meta">{{ e.date|longdate }}{% if e.time %} · {{ e.time }}{% endif %}{% if e.location %} · {{ e.location }}{% endif %}</p>
+      {% if e.description %}<div class="event-desc">{{ e.description|markdown }}</div>{% endif %}
+    </div>
+  </li>
+{% endmacro %}

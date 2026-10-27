@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% from "_macros.html" import photo %}
+{% block content %}
+  {{ page.content }}
+  <div class="grid">
+    {% for p in data.fellows %}
+    <article class="card">
+      {% if p.link %}<a href="{{ p.link }}">{{ photo(p) }}</a>{% else %}{{ photo(p) }}{% endif %}
+      <h2>{% if p.link %}<a href="{{ p.link }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</h2>
+      <p>{{ p.role }}<br>{{ p.lab }}</p>
+    </article>
+    {% endfor %}
+  </div>
+{% endblock %}

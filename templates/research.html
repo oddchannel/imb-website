@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="prose">{{ page.content }}</div>
+  <div class="tiles">
+    {% for a in data.research_areas %}
+      <a class="tile" href="/research/{{ a.id }}/"><h2>{{ a.name }}</h2>{% if a.summary %}<p>{{ a.summary }}</p>{% endif %}<span>{{ a.members|length }} faculty →</span></a>
+    {% endfor %}
+  </div>
+{% endblock %}

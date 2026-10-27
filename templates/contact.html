@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="contact">
+    <div class="prose">
+      {{ page.content }}
+      <h2>Address</h2>
+      <address>{% for line in site.address %}{{ line }}<br>{% endfor %}</address>
+      {% if site.email %}<h2>Email</h2><p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>{% endif %}
+      {% if site.phone %}<h2>Phone</h2><p>{{ site.phone }}</p>{% endif %}
+      <p>For questions about the Institute's administration, finance or operations, see our <a href="/administration/">administrative staff</a>.</p>
+    </div>
+    <iframe class="map" title="Map of the Biopsychological Sciences Building" loading="lazy"
+      src="https://www.google.com/maps?q=940+E+57th+St,+Chicago,+IL+60637&output=embed"></iframe>
+  </div>
+{% endblock %}

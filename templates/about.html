@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% from "_macros.html" import photo %}
+{% block content %}
+  {% if page.image %}<img class="wide-image" src="{{ page.image }}" alt="">{% endif %}
+  <div class="prose">{{ page.content }}</div>
+
+  {% set d = data.faculty|selectattr("name", "equalto", page.director)|first %}
+  <section class="director" id="director">
+    <h2 class="section-title">Institute Director</h2>
+    <div class="person">
+      {{ photo(d) }}
+      <div class="person-body">
+        <h3>{{ d.name }}{% if d.degree %}, {{ d.degree }}{% endif %}</h3>
+        {% for t in d.titles %}<p class="person-title">{{ t }}</p>{% endfor %}
+        <p>{{ page.director_summary }}</p>
+      </div>
+    </div>
+    <h3>Former Directors of the Institute</h3>
+    <ul class="plain">
+      {% for f in page.former_directors %}<li><strong>{{ f.years }}</strong> · {{ f.name }}</li>{% endfor %}
+    </ul>
+  </section>
+{% endblock %}

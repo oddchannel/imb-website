@@ -1,0 +1,78 @@
+# Configuration for Pages CMS (https://pagescms.org), an optional free editor that
+# gives non-technical staff simple web forms for the lists below.
+# Sign in at https://app.pagescms.org with the GitHub account that has access to this repository.
+media:
+  input: static/images
+  output: /images
+
+content:
+  - name: faculty
+    label: Faculty
+    type: file
+    path: data/faculty.yml
+    list: true
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: degree, label: Degree (e.g. PhD), type: string }
+      - { name: titles, label: Titles / appointments, type: string, list: true }
+      - { name: photo, label: Photo (square), type: image }
+      - { name: website, label: Lab website URL, type: string }
+      - { name: publications, label: Publications URL, type: string }
+      - name: areas
+        label: Research areas
+        type: select
+        options:
+          multiple: true
+          values: [cognition, perception, development, neuroendocrinology, computational-neuroscience]
+      - { name: bio, label: Biography, type: text }
+
+  - name: fellows
+    label: Fellows
+    type: file
+    path: data/fellows.yml
+    list: true
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - name: role
+        label: Role
+        type: select
+        options:
+          values: [Graduate Student, Postdoctoral Scholar, Research Fellow]
+      - { name: lab, label: Lab (e.g. Kay Lab), type: string }
+      - { name: photo, label: Photo (square), type: image }
+      - { name: link, label: Profile link (optional), type: string }
+
+  - name: staff
+    label: Administration
+    type: file
+    path: data/staff.yml
+    list: true
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: title, label: Job title, type: string }
+      - { name: photo, label: Photo (square), type: image }
+      - { name: email, label: Email (optional), type: string }
+      - { name: bio, label: Description, type: text }
+
+  - name: events
+    label: Events
+    type: file
+    path: data/events.yml
+    list: true
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: date, label: Date, type: date, required: true }
+      - { name: time, label: Time (e.g. 3:30 PM), type: string }
+      - { name: location, label: Location, type: string }
+      - { name: description, label: Description, type: text }
+      - { name: link, label: Link (optional), type: string }
+
+  - name: highlights
+    label: Home page research highlights
+    type: file
+    path: data/highlights.yml
+    list: true
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: image, label: Image, type: image }
+      - { name: text, label: Text (Markdown links allowed), type: text }

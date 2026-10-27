@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="prose">{{ page.content }}</div>
+  <div class="tiles">
+    <a class="tile" href="/faculty/"><h2>Members</h2><p>Faculty from the Division of the Social Sciences</p><span>{{ data.faculty|length }} faculty →</span></a>
+    <a class="tile" href="/fellows/"><h2>Fellows</h2><p>Postdoctoral scholars and graduate students</p><span>{{ data.fellows|length }} fellows →</span></a>
+    <a class="tile" href="/administration/"><h2>Administration</h2><p>Institute staff</p><span>{{ data.staff|length }} staff →</span></a>
+  </div>
+  {% if page.image %}<img class="wide-image" src="{{ page.image }}" alt="Members of the Institute community">{% endif %}
+{% endblock %}

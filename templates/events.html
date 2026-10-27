@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% from "_macros.html" import event_item %}
+{% block content %}
+  {{ page.content }}
+  <h2 class="section-title">Upcoming</h2>
+  {% if data.upcoming_events %}
+    <ul class="events">{% for e in data.upcoming_events %}{{ event_item(e) }}{% endfor %}</ul>
+  {% else %}
+    <p class="muted">No upcoming events are scheduled right now. Please check back soon.</p>
+  {% endif %}
+  {% if data.past_events %}
+  <details class="past">
+    <summary>Past events ({{ data.past_events|length }})</summary>
+    <ul class="events">{% for e in data.past_events %}{{ event_item(e) }}{% endfor %}</ul>
+  </details>
+  {% endif %}
+{% endblock %}
