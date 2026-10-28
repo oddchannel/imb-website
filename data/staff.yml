@@ -1,25 +1,26 @@
 # Institute administration and support staff.
 
-- name: "Scott Bradwell"
-  title: "SSCS Computer Systems Administrator"
-  photo: /images/people/staff-scott-bradwell.jpg
-  bio: |
-    Scott designs and administers the multi-user server computers and assists the users of these computers for Members and their lab personnel. Scott has supported Institute faculty and labs dating back to the early 2000s.
+staff:
+  - name: "Scott Bradwell"
+    title: "SSCS Computer Systems Administrator"
+    photo: /images/people/staff-scott-bradwell.jpg
+    bio: |
+      Scott designs and administers the multi-user server computers and assists the users of these computers for Members and their lab personnel. Scott has supported Institute faculty and labs dating back to the early 2000s.
 
-- name: "Janet Capodagli"
-  title: "Operations Assistant"
-  photo: /images/people/staff-janet-capodagli.jpg
-  bio: |
-    Janet Capodagli has served as Operations Assistant since June 2004. She supports the Institute and its Members in processing transactions (purchasing, travel and non-travel employee reimbursements, human subject payments, and accounts payable) and personnel actions.
+  - name: "Janet Capodagli"
+    title: "Operations Assistant"
+    photo: /images/people/staff-janet-capodagli.jpg
+    bio: |
+      Janet Capodagli has served as Operations Assistant since June 2004. She supports the Institute and its Members in processing transactions (purchasing, travel and non-travel employee reimbursements, human subject payments, and accounts payable) and personnel actions.
 
-- name: "Anissha Warner"
-  title: "Administrative Director"
-  photo: 
-  bio: |
-    Anissha has served as Administrative Director since October 2019. She oversees finance, grants administration, human resources, governance, strategic planning, and programmatic initiatives for the Institute and its nine labs. Anissha supervises the Institute staff.
+  - name: "Anissha Warner"
+    title: "Administrative Director"
+    photo: 
+    bio: |
+      Anissha has served as Administrative Director since October 2019. She oversees finance, grants administration, human resources, governance, strategic planning, and programmatic initiatives for the Institute and its nine labs. Anissha supervises the Institute staff.
 
-- name: "Chris Whaley"
-  title: "Building Manager"
-  photo: /images/people/staff-chris-whaley.jpg
-  bio: |
-    Chris Whaley has served as the Biopsychological Sciences (BPSB) Building Manager since September 2021. He monitors, maintains, troubleshoots, and repairs (or coordinates repairs of) all building systems and communal equipment. Chris also handles building access, oversees health and safety compliance, and coordinates shipping and receiving for building occupants.
+  - name: "Chris Whaley"
+    title: "Building Manager"
+    photo: /images/people/staff-chris-whaley.jpg
+    bio: |
+      Chris Whaley has served as the Biopsychological Sciences (BPSB) Building Manager since September 2021. He monitors, maintains, troubleshoots, and repairs (or coordinates repairs of) all building systems and communal equipment. Chris also handles building access, oversees health and safety compliance, and coordinates shipping and receiving for building occupants.

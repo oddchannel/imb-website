@@ -113,7 +113,7 @@ Daily schedule (09:00 UTC)         ─┘            │
 - **Collaborators** are invited **by email and don't need a GitHub account**. They can edit content and media. They can't change `.pages.yml`, manage collaborators, or use cache settings.
 - **Configuration:** `.pages.yml` defines the menus and forms:
   - **News:** a collection with a date picker, category dropdown, image, draft checkbox and rich-text story.
-  - **Events:** a list with a date picker.
+  - **Events:** a list with a date picker. Fellows, Administration, Events and Publications each show one collapsed line per item; for that, their files store the list under a key (`events:`, `fellows:` and so on), because Pages CMS can only collapse a list that is a field, not a whole-file `list: true`. `build.py` accepts either layout.
   - **Publications:** a DOI field, plus faculty authors chosen from the Faculty collection.
   - **People:** Faculty (collection; areas chosen from Research areas), Fellows (list; role dropdown) and Administration (list).
   - **Research areas** (collection), **Page text** (11 pages) and **Contact details**.

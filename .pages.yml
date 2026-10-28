@@ -79,34 +79,41 @@ content:
     type: file
     path: data/events.yml
     format: yaml
-    list: true
     fields:
-      - name: title
-        label: Event name
-        type: string
-        required: true
-      - name: date
-        label: Date
-        type: date
-        required: true
-        options:
-          format: yyyy-MM-dd
-      - name: time
-        label: Time
-        description: e.g. 3:30 PM, or 12:00 – 1:30 PM
-        type: string
-      - name: location
-        label: Location
-        description: e.g. BPSB Atrium
-        type: string
-      - name: description
-        label: Description
-        description: Optional.
-        type: text
-      - name: link
-        label: Link for more info or RSVP
-        description: Optional web address.
-        type: string
+      - name: events
+        label: false
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{date} · {title}"
+        fields:
+          - name: title
+            label: Event name
+            type: string
+            required: true
+          - name: date
+            label: Date
+            type: date
+            required: true
+            options:
+              format: yyyy-MM-dd
+          - name: time
+            label: Time
+            description: e.g. 3:30 PM, or 12:00 – 1:30 PM
+            type: string
+          - name: location
+            label: Location
+            description: e.g. BPSB Atrium
+            type: string
+          - name: description
+            label: Description
+            description: Optional.
+            type: text
+          - name: link
+            label: Link for more info or RSVP
+            description: Optional web address.
+            type: string
 
   # ------------------------------------------------------------------ Publications
   - name: publications
@@ -114,35 +121,42 @@ content:
     type: file
     path: data/publications.yml
     format: yaml
-    list: true
     fields:
-      - name: doi
-        label: DOI
-        description: Paste the paper's DOI (e.g. 10.1177/09567976221090923). The title, authors, journal and year fill in automatically.
-        type: string
-      - name: members
-        label: Institute members on this paper
-        type: reference
-        options:
-          collection: faculty
-          multiple: true
-          value: "{primary}"
-          label: "{primary}"
-      - name: title
-        label: Title (only if there's no DOI, or to correct it)
-        type: string
-      - name: authors
-        label: Authors (only if there's no DOI)
-        type: string
-      - name: journal
-        label: Journal (only if there's no DOI)
-        type: string
-      - name: year
-        label: Year (only if there's no DOI)
-        type: number
-      - name: link
-        label: Link (optional; defaults to the DOI page)
-        type: string
+      - name: publications
+        label: false
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{doi} {title}"
+        fields:
+          - name: doi
+            label: DOI
+            description: Paste the paper's DOI (e.g. 10.1177/09567976221090923). The title, authors, journal and year fill in automatically.
+            type: string
+          - name: members
+            label: Institute members on this paper
+            type: reference
+            options:
+              collection: faculty
+              multiple: true
+              value: "{primary}"
+              label: "{primary}"
+          - name: title
+            label: Title (only if there's no DOI, or to correct it)
+            type: string
+          - name: authors
+            label: Authors (only if there's no DOI)
+            type: string
+          - name: journal
+            label: Journal (only if there's no DOI)
+            type: string
+          - name: year
+            label: Year (only if there's no DOI)
+            type: number
+          - name: link
+            label: Link (optional; defaults to the DOI page)
+            type: string
 
   # ------------------------------------------------------------------ People
   - name: people
@@ -206,58 +220,72 @@ content:
         type: file
         path: data/fellows.yml
         format: yaml
-        list: true
         fields:
-          - name: name
-            label: Full name
-            type: string
-            required: true
-          - name: role
-            label: Role
-            type: select
-            options:
-              values: [Graduate Student, Postdoctoral Scholar, Research Fellow]
-          - name: lab
-            label: Lab
-            description: e.g. Kay Lab
-            type: string
-          - name: photo
-            label: Photo
-            description: Optional. Square headshot; initials are shown if there's no photo.
-            type: image
-            options:
-              path: static/images/people
-          - name: link
-            label: Profile link
-            description: Optional, e.g. their Psychology department directory page.
-            type: string
+          - name: fellows
+            label: false
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{name} ({role})"
+            fields:
+              - name: name
+                label: Full name
+                type: string
+                required: true
+              - name: role
+                label: Role
+                type: select
+                options:
+                  values: [Graduate Student, Postdoctoral Scholar, Research Fellow]
+              - name: lab
+                label: Lab
+                description: e.g. Kay Lab
+                type: string
+              - name: photo
+                label: Photo
+                description: Optional. Square headshot; initials are shown if there's no photo.
+                type: image
+                options:
+                  path: static/images/people
+              - name: link
+                label: Profile link
+                description: Optional, e.g. their Psychology department directory page.
+                type: string
 
       - name: staff
         label: Administration
         type: file
         path: data/staff.yml
         format: yaml
-        list: true
         fields:
-          - name: name
-            label: Full name
-            type: string
-            required: true
-          - name: title
-            label: Job title
-            type: string
-          - name: photo
-            label: Photo
-            type: image
-            options:
-              path: static/images/people
-          - name: email
-            label: Email
-            description: Optional.
-            type: string
-          - name: bio
-            label: Description
-            type: text
+          - name: staff
+            label: false
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{name} · {title}"
+            fields:
+              - name: name
+                label: Full name
+                type: string
+                required: true
+              - name: title
+                label: Job title
+                type: string
+              - name: photo
+                label: Photo
+                type: image
+                options:
+                  path: static/images/people
+              - name: email
+                label: Email
+                description: Optional.
+                type: string
+              - name: bio
+                label: Description
+                type: text
 
   # ------------------------------------------------------------------ Research areas
   - name: research_areas

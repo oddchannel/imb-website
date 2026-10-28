@@ -201,8 +201,12 @@ def build_publications(entries, faculty):
 # ---------- assembling the site ----------
 
 def load_everything():
-    data = {name: load_yaml(ROOT / "data" / f"{name}.yml", [])
-            for name in ("fellows", "staff", "events", "publications")}
+    data = {}
+    for name in ("fellows", "staff", "events", "publications"):
+        value = load_yaml(ROOT / "data" / f"{name}.yml", [])
+        if isinstance(value, dict):  # stored as "events: [...]" so the dashboard can collapse it
+            value = value.get(name) or []
+        data[name] = value
 
     areas = []
     for path in sorted((ROOT / "content/research").glob("*.md")):

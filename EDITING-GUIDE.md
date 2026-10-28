@@ -47,7 +47,8 @@ The four newest stories appear on the home page automatically.
 **Tip:** Not ready to publish yet? Tick **Draft**. A draft is saved but stays hidden from the website. Untick it when you're ready.
 
 ### Add an event
-1. Click **Events**, then add a new item. New items usually appear at the bottom of the list, which is fine.
+1. Click **Events**. Each event is shown as one line (date and name); click a line to open it.
+   To add an event, scroll to the bottom and click **Add an item**. New items appear at the bottom of the list, which is fine.
 2. Fill in the **Event name**, **Date**, **Time** and **Location**.
 3. Click **Save**.
 
@@ -56,7 +57,7 @@ You never need to sort events or remove old ones. The site shows upcoming events
 A good habit is to add a whole quarter's events at once, e.g. every Cookie Hour and ProSeminar for Winter quarter.
 
 ### Add a publication
-1. Click **Publications** and add a new item.
+1. Click **Publications**, scroll to the bottom and click **Add an item**.
 2. Paste the paper's **DOI** into the DOI box. You can usually find it on the journal's page; it looks like `10.1177/09567976221090923`. You can paste the full `https://doi.org/...` link too.
 3. Under **Institute members on this paper**, choose the faculty members who are authors.
 4. Click **Save**.
@@ -64,14 +65,14 @@ A good habit is to add a whole quarter's events at once, e.g. every Cookie Hour 
 That's all. The website looks up the title, authors, journal and year automatically. Leave the other boxes empty unless the paper has no DOI, in which case fill them in by hand.
 
 ### Welcome a new student or postdoc
-1. Click **People → Fellows** and add a new item.
+1. Click **People → Fellows**, scroll to the bottom and click **Add an item**.
 2. Fill in their **Full name**, **Role**, **Lab** and, optionally, a **Photo** and **Profile link**.
 3. Click **Save**.
 
 Fellows are sorted alphabetically by last name automatically. If there's no photo, the site shows the person's initials.
 
 ### Someone has left
-Open the right section (Fellows, Faculty or Administration), find the person, and delete their entry. Then **Save**.
+Open the right section (Fellows, Faculty or Administration), find the person, and delete their entry. In Fellows and Administration, click the person's line to open it first. Then **Save**.
 
 Each September, it's worth looking through the Fellows list for anyone who has graduated or moved on.
 
