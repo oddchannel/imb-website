@@ -17,7 +17,7 @@
 | Automatic publishing (GitHub Actions to GitHub Pages) | Written, **not yet run** (no GitHub repository yet) |
 | GitHub repository | **Not created yet** |
 | Custom domain `imb.uchicago.edu` | **Not switched yet.** Needs a DNS change by UChicago IT |
-| Editor guide for Anissha | Done: `EDITING-GUIDE.md` and `IMB-Website-Editing-Guide.pdf` (support-contact line left blank, to fill in by hand) |
+| Editor guide for Anissha | Done: `EDITING-GUIDE.md` and `IMB-Website-Editing-Guide.pdf` (support contact: Ed Vogel) |
 | Review demo | Done: `IMB-website-demo.zip` (opens offline) |
 
 **Location on Ed's Mac:** `~/data/imb-website/`. It's a Git repository on the `main` branch with 2 commits:
@@ -138,7 +138,7 @@ Daily schedule (09:00 UTC)         ─┘            │
 3. **Turn on Pages:** **Settings → Pages → Source: GitHub Actions**. Then go to **Actions → Build and publish site → Run workflow**. The first automatic run fails if Pages wasn't turned on yet; that's expected.
 4. **Check the published site** at `https://<org>.github.io/imb-website/`. Run `python tools/check_links.py` against a local build if needed.
 5. **Connect Pages CMS:** sign in at app.pagescms.org with GitHub, install the Pages CMS GitHub App on the repository, and open the project. Click through every section, then save one test edit and confirm it publishes.
-6. **Invite Anissha** by email as a collaborator in Pages CMS. Fill in the support contact on page 4 of the PDF guide, and send it to her.
+6. **Invite Anissha** by email as a collaborator in Pages CMS. Send her the PDF guide; the support contact is filled in (Ed Vogel).
 7. **Switch the domain:**
    1. In GitHub, go to **Settings → Pages → Custom domain** and enter `imb.uchicago.edu`.
    2. Ask UChicago IT Services to point the DNS record to `<org>.github.io` (a CNAME).

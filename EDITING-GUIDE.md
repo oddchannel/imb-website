@@ -6,9 +6,9 @@ This guide is for whoever looks after the Institute's website day to day. You do
 
 ## 1. Signing in
 
-1. You'll get an email invitation from **Pages CMS**. Pages CMS is the website's dashboard.
+1. You'll get an email invitation from **Pages CMS** (subject: *Join "oddchannel/imb-website" on Pages CMS*). Pages CMS is the website's dashboard. Accept it within a day, because the invitation link expires; if it does, ask for a new one.
 2. Go to **https://app.pagescms.org** and sign in with the email address the invitation was sent to.
-3. Click the **IMB website** to open the dashboard.
+3. Click **imb-website** to open the dashboard.
 
 Bookmark the dashboard page. You'll come back to it every time.
 
@@ -29,6 +29,8 @@ The menu on the left lists everything you can change:
 | **Contact details** | Address, contact email and phone number shown on every page |
 
 **Saving publishes your change.** About **2 minutes** after you click **Save**, the public website updates by itself. There's no separate "publish" step.
+
+**Don't see your change?** Your browser may be showing a copy it saved earlier, for up to 10 minutes. Hold **Ctrl** and **Shift** and press **R** to reload a fresh copy (on a Mac, **⌘ Shift R**). The status page described below shows when the site last updated.
 
 ---
 
@@ -110,7 +112,7 @@ If it says **All good ✓**, you're done.
 
 - **You can't break the website by mistake.** Every change is saved in a history, and any earlier version can be brought back. If you delete something by accident, ask for help and it can be restored.
 - If a change hasn't shown up after 5 minutes, check the status page. You can also click **Publish site now** in the dashboard.
-- For anything else, contact: **______________________** *(fill in who supports the website)*
+- For anything else, contact: **Ed Vogel**, [edvogel@uchicago.edu](mailto:edvogel@uchicago.edu)
 
 ---
 
