@@ -1,130 +1,102 @@
-# Institute events. Add new events anywhere in this list; order doesn't matter.
-# The site sorts them by date and splits them into "Upcoming" and "Past" automatically.
-#
-#   date:        YYYY-MM-DD   (required)
-#   time:        free text, e.g. "3:30 PM" or "12:00 – 1:30 PM"
-#   location:    free text
-#   description: optional, Markdown allowed
-#   link:        optional URL for more info / RSVP
-
 - title: IMB Fellows Welcome
   date: 2023-09-20
   time: 3:30 PM
   location: BPSB Atrium
-  description: IMB Members and current Fellows will welcome new students and postdocs to the IMB Fellow program.
-
+  description: IMB Members and current Fellows will welcome new students and
+    postdocs to the IMB Fellow program.
 - title: Autumn Welcome Breakfast
   date: 2023-09-27
   time: 9:00 AM
   location: BPSB Atrium
   description: IMB annual Autumn Welcome Breakfast to kick off the academic year.
-
 - title: ProSeminar
   date: 2023-10-02
   time: 12:30 PM
   location: BPSB Seminar Rooms 122/123
-
 - title: Fall Cookout
   date: 2023-10-11
   time: 12:00 PM
   location: BPSB Patio/Atrium
-
 - title: Cookie Hour
   date: 2023-11-08
   time: 3:30 PM
   location: BPSB Atrium
-
 - title: Turkey Talks
   date: 2023-11-13
   time: 12:00 PM
   location: BPSB Atrium
-
 - title: BPSB Occupants Meeting
   date: 2023-11-15
   time: 1:30 PM
   location: BPSB Seminar Rooms 122/123
-
 - title: BPSB Animal Care Meeting
   date: 2023-11-15
   time: 2:00 PM
   location: BPSB Seminar Rooms 122/123
-
 - title: ProSeminar
   date: 2023-11-27
   time: 12:30 PM
   location: BPSB Seminar Rooms 122/123
-
 - title: Holiday Cookie Hour
   date: 2023-12-06
   time: 3:30 PM
   location: BPSB Atrium
-
 - title: ProSeminar
   date: 2024-01-08
   time: 12:30 PM
   location: BPSB Seminar Rooms 122/123
-
 - title: Cookie Hour
   date: 2024-01-10
   time: 3:30 PM
   location: BPSB Atrium
-
 - title: ProSeminar
   date: 2024-02-05
   time: 12:30 PM
   location: BPSB Seminar Rooms 122/123
-
 - title: Cookie Hour
   date: 2024-02-07
   time: 3:30 PM
   location: BPSB Atrium
-
 - title: BPSB Occupants Meeting
   date: 2024-02-14
   time: 1:30 PM
   location: BPSB Seminar Rooms 122/123
-
 - title: BPSB Animal Care Meeting
   date: 2024-02-14
   time: 2:00 PM
   location: BPSB Seminar Rooms 122/123
-
 - title: Cookie Hour
   date: 2024-03-06
   time: 3:30 PM
   location: BPSB Atrium
-
 - title: ProSeminar
   date: 2024-04-01
   time: 12:30 PM
   location: BPSB Seminar Rooms 122/123
-
 - title: Cookie Hour
   date: 2024-04-03
   time: 3:30 PM
   location: BPSB Atrium
-
 - title: ProSeminar
   date: 2024-05-06
   time: 12:30 PM
   location: BPSB Seminar Rooms 122/123
-
 - title: Cookie Hour
   date: 2024-05-08
   time: 3:30 PM
   location: BPSB Atrium
-
 - title: BPSB Occupants Meeting
   date: 2024-05-15
   time: 1:30 PM
   location: BPSB Seminar Rooms 122/123
-
 - title: BPSB Animal Care Meeting
   date: 2024-05-15
   time: 2:00 PM
   location: BPSB Seminar Rooms 122/123
-
 - title: Spring Cookout
   date: 2024-05-22
   time: 12:00 PM
   location: BPSB Patio/Atrium
+- title: test event
+  date: 2026-10-27
+  time: 10:30pm
