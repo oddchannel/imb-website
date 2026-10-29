@@ -1,94 +1,61 @@
-# Institute Fellows: graduate students and postdoctoral scholars.
-# "role" is e.g. Graduate Student / Postdoctoral Scholar / Research Fellow.
-# "link" is optional (e.g. their Psychology department directory page). "photo" is optional.
-
 fellows:
-  - name: "Aiden Healy"
-    role: Graduate Student
-    lab: Awh/Vogel Lab
-    photo: /images/people/fellow-aiden-healy.jpg
-    link:   # old link (psychology.uchicago.edu/directory/aidan-healy) no longer works
-
-  - name: "Henry Jones"
+  - name: Henry Jones
     role: Graduate Student
     lab: Awh/Vogel Lab
     photo: /images/people/fellow-henry-jones.jpg
-    link:   # old link (psychology.uchicago.edu/directory/henry-jones) no longer works
-
-  - name: "JohnMichael Jurgensen"
+  - name: JohnMichael Jurgensen
     role: Graduate Student
     lab: Maestripieri Lab
     photo: /images/people/fellow-johnmichael-jurgensen.jpg
-    link: 
-
-  - name: "Ryan Lange"
+  - name: Ryan Lange
     role: Research Fellow
     lab: Shevell Lab
     photo: /images/people/fellow-ryan-lange.jpg
-    link:   # old link (psychology.uchicago.edu/directory/ryan-lange-1) no longer works
-
-  - name: "Meongsun (Sunny) Lee"
+  - name: Meongsun (Sunny) Lee
     role: Graduate Student
     lab: Shevell Lab
-    photo: 
     link: https://psychology.uchicago.edu/directory/meongsun-sunny-lee
-
-  - name: "Huibo (Daisy) Li"
+  - name: Huibo (Daisy) Li
     role: Graduate Student
     lab: Kay Lab
     photo: /images/people/fellow-huibo-li.jpg
-    link:   # old link (psychology.uchicago.edu/directory/huibo-daisy-li) no longer works
-
-  - name: "Jharnae Love"
+  - name: Jharnae Love
     role: Graduate Student
     lab: Prendergast Lab
     photo: /images/people/fellow-jharnae-love.jpg
-    link:   # old link (psychology.uchicago.edu/directory/jharnae-love) no longer works
-
-  - name: "William Ngiam"
+  - name: William Ngiam
     role: Postdoctoral Scholar
     lab: Awh/Vogel Lab
     photo: /images/people/fellow-william-ngiam.jpg
     link: https://psychology.uchicago.edu/directory/william-ngiam
-
-  - name: "Hyung-Bum Park"
+  - name: Hyung-Bum Park
     role: Postdoctoral Scholar
     lab: Awh/Vogel Lab
     photo: /images/people/fellow-hyung-bum-park.jpg
-    link:   # old site linked to the wrong person; add correct directory link
-
-  - name: "Jaelyn Peiso"
+  - name: Jaelyn Peiso
     role: Postdoctoral Scholar
     lab: Vogel Lab
     photo: /images/people/fellow-jaelyn-peiso.jpg
-    link: 
-
-  - name: "Sabina Rajah"
+  - name: Sabina Rajah
     role: Graduate Student
     lab: Prendergast Lab
     photo: /images/people/fellow-sabina-rajah.jpg
     link: https://psychology.uchicago.edu/directory/sabina-raja
-
-  - name: "Sameera Shridhar"
+  - name: Sameera Shridhar
     role: Graduate Student
     lab: Yu Lab
     photo: /images/people/fellow-sameera-shridhar.jpg
     link: https://psychology.uchicago.edu/directory/sameera-shridhar
-
-  - name: "Pinar Toptas"
+  - name: Pinar Toptas
     role: Graduate Student
     lab: Yu Lab
     photo: /images/people/fellow-pinar-toptas.jpg
     link: https://psychology.uchicago.edu/directory/p%C4%B1nar-toptas
-
-  - name: "Chong Zhao"
+  - name: Chong Zhao
     role: Graduate Student
     lab: Awh/Vogel Lab
     photo: /images/people/fellow-chong-zhao.jpg
-    link:   # old link (psychology.uchicago.edu/directory/chong-zhao) no longer works
-
-  - name: "Nan Zhou"
+  - name: Nan Zhou
     role: Graduate Student
     lab: Yu Lab
     photo: /images/people/fellow-nan-zhou.jpg
-    link:   # old link (psychology.uchicago.edu/directory/nan-zhou) no longer works
