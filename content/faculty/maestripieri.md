@@ -3,7 +3,7 @@ name: Dario Maestripieri
 degree: PhD
 titles:
   - Professor, Department of Comparative Human Development and The College
-photo: /images/people/maestripieri-19rkilg.jpg
+photo: /images/people/maestripieri-19rkilg-1.jpg
 website: https://primate.uchicago.edu/index.html
 publications_url: https://scholar.google.com/citations?user=Or_dEW0AAAAJ&hl=en&oi=ao
 areas:
