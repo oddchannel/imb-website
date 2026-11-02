@@ -3,6 +3,7 @@ name: Leslie Kay
 degree: PhD
 titles:
   - Professor, Department of Psychology and The College
+photo: /images/people/img2122.jpeg
 website: https://kaylab.uchicago.edu/
 publications_url: https://scholar.google.com/citations?user=uPf7_a4AAAAJ&hl=en&oi=ao
 areas:
