@@ -4,6 +4,7 @@ degree: PhD
 titles:
   - Director, Institute for Mind and Biology
   - Professor, Department of Psychology and The College
+photo: /images/people/tempimaged9ksuf.jpg
 website: https://awhvogellab.com/
 publications_url: https://scholar.google.com/citations?user=K24Hke0AAAAJ&hl=en&oi=ao
 areas:
