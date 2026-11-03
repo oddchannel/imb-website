@@ -1,22 +1,4 @@
 fellows:
-  - name: JohnMichael Jurgensen
-    role: Graduate Student
-    lab: Maestripieri Lab
-    photo: /images/people/fellow-johnmichael-jurgensen.jpg
-  - name: Meongsun (Sunny) Lee
-    role: Graduate Student
-    lab: Shevell Lab
-    link: https://psychology.uchicago.edu/directory/meongsun-sunny-lee
-  - name: Sameera Shridhar
-    role: Graduate Student
-    lab: Yu Lab
-    photo: /images/people/fellow-sameera-shridhar.jpg
-    link: https://psychology.uchicago.edu/directory/sameera-shridhar
-  - name: Pinar Toptas
-    role: Graduate Student
-    lab: Yu Lab
-    photo: /images/people/fellow-pinar-toptas.jpg
-    link: https://psychology.uchicago.edu/directory/p%C4%B1nar-toptas
   - name: Alice Batistuzzo
     role: Postdoctoral Scholar
     lab: London Lab
@@ -50,12 +32,20 @@ fellows:
   - name: Gengshi Hu
     role: Graduate Student
     lab: Awh/Vogel Lab
+  - name: JohnMichael Jurgensen
+    role: Graduate Student
+    lab: Maestripieri Lab
+    photo: /images/people/fellow-johnmichael-jurgensen.jpg
   - name: Ata Karagoz
     role: Postdoctoral Scholar
     lab: Bakkour Lab
   - name: Hannah Kim
     role: Postdoctoral Scholar
     lab: Bakkour Lab
+  - name: Meongsun (Sunny) Lee
+    role: Graduate Student
+    lab: Shevell Lab
+    link: https://psychology.uchicago.edu/directory/meongsun-sunny-lee
   - name: Seoyoung Lee
     role: Graduate Student
     lab: Bakkour Lab
@@ -92,9 +82,13 @@ fellows:
   - name: Sameera Shridhar
     role: Graduate Student
     lab: Yu Lab
+    photo: /images/people/fellow-sameera-shridhar.jpg
+    link: https://psychology.uchicago.edu/directory/sameera-shridhar
   - name: Pinar Toptas
     role: Graduate Student
     lab: Yu Lab
+    photo: /images/people/fellow-pinar-toptas.jpg
+    link: https://psychology.uchicago.edu/directory/p%C4%B1nar-toptas
   - name: Kruthika Vm
     role: Graduate Student
     lab: London Lab
