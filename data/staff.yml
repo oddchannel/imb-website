@@ -14,14 +14,6 @@ staff:
       supports the Institute and its Members in processing transactions
       (purchasing, travel and non-travel employee reimbursements, human subject
       payments, and accounts payable) and personnel actions.
-  - name: Chris Whaley
-    title: Building Manager
-    bio: >
-      Chris Whaley has served as the Biopsychological Sciences (BPSB) Building
-      Manager since September 2021. He monitors, maintains, troubleshoots, and
-      repairs (or coordinates repairs of) all building systems and communal
-      equipment. Chris also handles building access, oversees health and safety
-      compliance, and coordinates shipping and receiving for building occupants.
   - name: Scott Bradwell
     title: SSCS Computer Systems Administrator
     photo: /images/people/staff-scott-bradwell.jpg
@@ -29,3 +21,7 @@ staff:
       Scott designs and administers the multi-user server computers and assists
       the users of these computers for Members and their lab personnel. Scott
       has supported Institute faculty and labs dating back to the early 2000s.
+  - name: Robert Moss
+    title: Facilities Manager
+    email: bmoss@uchicago.edu
+    bio: He's great!
