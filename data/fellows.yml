@@ -1,46 +1,12 @@
 fellows:
-  - name: Henry Jones
-    role: Graduate Student
-    lab: Awh/Vogel Lab
-    photo: /images/people/fellow-henry-jones.jpg
   - name: JohnMichael Jurgensen
     role: Graduate Student
     lab: Maestripieri Lab
     photo: /images/people/fellow-johnmichael-jurgensen.jpg
-  - name: Ryan Lange
-    role: Research Fellow
-    lab: Shevell Lab
-    photo: /images/people/fellow-ryan-lange.jpg
   - name: Meongsun (Sunny) Lee
     role: Graduate Student
     lab: Shevell Lab
     link: https://psychology.uchicago.edu/directory/meongsun-sunny-lee
-  - name: Huibo (Daisy) Li
-    role: Graduate Student
-    lab: Kay Lab
-    photo: /images/people/fellow-huibo-li.jpg
-  - name: Jharnae Love
-    role: Graduate Student
-    lab: Prendergast Lab
-    photo: /images/people/fellow-jharnae-love.jpg
-  - name: William Ngiam
-    role: Postdoctoral Scholar
-    lab: Awh/Vogel Lab
-    photo: /images/people/fellow-william-ngiam.jpg
-    link: https://psychology.uchicago.edu/directory/william-ngiam
-  - name: Hyung-Bum Park
-    role: Postdoctoral Scholar
-    lab: Awh/Vogel Lab
-    photo: /images/people/fellow-hyung-bum-park.jpg
-  - name: Jaelyn Peiso
-    role: Postdoctoral Scholar
-    lab: Vogel Lab
-    photo: /images/people/fellow-jaelyn-peiso.jpg
-  - name: Sabina Rajah
-    role: Graduate Student
-    lab: Prendergast Lab
-    photo: /images/people/fellow-sabina-rajah.jpg
-    link: https://psychology.uchicago.edu/directory/sabina-raja
   - name: Sameera Shridhar
     role: Graduate Student
     lab: Yu Lab
@@ -51,11 +17,6 @@ fellows:
     lab: Yu Lab
     photo: /images/people/fellow-pinar-toptas.jpg
     link: https://psychology.uchicago.edu/directory/p%C4%B1nar-toptas
-  - name: Chong Zhao
-    role: Graduate Student
-    lab: Awh/Vogel Lab
-    photo: /images/people/fellow-chong-zhao.jpg
-  - name: Nan Zhou
-    role: Graduate Student
-    lab: Yu Lab
-    photo: /images/people/fellow-nan-zhou.jpg
+  - name: Alice Batistuzzo
+    role: Postdoctoral Scholar
+    lab: London Lab
