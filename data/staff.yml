@@ -2,16 +2,14 @@ staff:
   - name: Anissha Warner
     title: Administrative Director
     email: awarner@uchicago.edu
-    bio: >
-      Anissha has served as Administrative Director since October 2019. She
+    bio: Anissha has served as Administrative Director since October 2019. She
       oversees finance, grants administration, human resources, governance,
       strategic planning, and programmatic initiatives for the Institute and its
       twelve labs. Anissha supervises the Institute staff.
   - name: Janet Capodagli
     title: Operations Assistant
     photo: /images/people/staff-janet-capodagli.jpg
-    bio: >
-      Janet Capodagli has served as Operations Assistant since June 2004. She
+    bio: Janet Capodagli has served as Operations Assistant since June 2004. She
       supports the Institute and its Members in processing transactions
       (purchasing, travel and non-travel employee reimbursements, human subject
       payments, and accounts payable) and personnel actions.
@@ -19,8 +17,7 @@ staff:
     title: SSCS Computer Systems Administrator
     photo: /images/people/staff-scott-bradwell.jpg
     email: sdbradwe@uchicago.edu
-    bio: >
-      Scott designs and administers the multi-user server computers and assists
+    bio: Scott designs and administers the multi-user server computers and assists
       the users of these computers for Members and their lab personnel. Scott
       has supported Institute faculty and labs dating back to the early 2000s.
   - name: Robert Moss
